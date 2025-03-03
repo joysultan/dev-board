@@ -1,5 +1,5 @@
 const allButton = document.querySelectorAll('.completed-btn');
-
+let compleateTaskCount = 0;
 for (const button of allButton) {
     button.addEventListener('click', function () {
         const taskElement = document.getElementById('task');
@@ -24,15 +24,20 @@ for (const button of allButton) {
             if (heading) {
                 const activity = document.getElementById('activity-log-container');
                 const newItem = document.createElement('p');
-                newItem.innerText = `You have completed the task: ${heading.innerText}`;
+                newItem.innerHTML = `<h4>You have completed the task:</h4>   ${heading.innerText}`;
+                
+                newItem.style.padding = '10px'
                 activity.appendChild(newItem);
-
-
                 const currentTime = getCurrentTime();
 
-                newItem.innerText = `You have completed the task: ${heading.innerText} at ${currentTime}`;
+                newItem.innerHTML = `<h4>You have completed the task:</h4> ${heading.innerText} at: ${currentTime}`;
                 activity.appendChild(newItem);
+                compleateTaskCount++;
             }
+        }
+
+        if(compleateTaskCount===6){
+            alert('Congratulations! You have unlocked all the cards');
         }
     });
 }
@@ -41,3 +46,10 @@ const activityButton = document.getElementById('activity-btn').addEventListener(
     const activityContainer = document.getElementById('activity-log-container');
     activityContainer.innerHTML = ''; 
 })
+
+
+document.getElementById('discover-new-today').addEventListener('click', function(){
+    window.location.href = './faq.html'
+})
+
+
