@@ -48,8 +48,6 @@ const activityButton = document.getElementById('activity-btn').addEventListener(
 })
 
 
-document.getElementById('discover-new-today').addEventListener('click', function(){
-    window.location.href = "faq/faq.html";
-})
+
 
 
