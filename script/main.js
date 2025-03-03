@@ -25,7 +25,7 @@ for (const button of allButton) {
                 const activity = document.getElementById('activity-log-container');
                 const newItem = document.createElement('p');
                 newItem.innerHTML = `<h4>You have completed the task:</h4>   ${heading.innerText}`;
-                
+
                 newItem.style.padding = '10px'
                 activity.appendChild(newItem);
                 const currentTime = getCurrentTime();
@@ -49,7 +49,7 @@ const activityButton = document.getElementById('activity-btn').addEventListener(
 
 
 document.getElementById('discover-new-today').addEventListener('click', function(){
-    window.location.href = './faq.html'
+    window.location.href = '/faq.html'
 })
 
 
